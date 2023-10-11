@@ -2,6 +2,7 @@ import { sternzeichen } from "./tiere";
 import { geschichte } from "./geschichte";
 import { loveWidder } from "./loveCombinations";
 import { Sternzeichen } from "./classes";
+
 export function createHauptseite() {
   const container = document.getElementById("container");
   container.innerHTML = "";
@@ -87,7 +88,7 @@ export function createHauptseite() {
   const btnBack = document.createElement("button");
   btnBack.textContent = "Zurück";
   btnBack.addEventListener("click", () => {
-    //createHtml();
+    //createHtml("", "Zwillinge","♥️♥️♥️♥️", "");
     console.log("Startseite");
   });
 
@@ -107,7 +108,8 @@ export function createHauptseite() {
 }
 
 function createGeschichte() {
-  const middle = document.createElement("middle");
+  const middle = document.createElement("div");
+  middle.classList.add("middle");
   container.appendChild(middle);
   const element = document.createElement("h1");
   element.textContent = "Geschichte";
@@ -120,104 +122,11 @@ function createGeschichte() {
   div.appendChild(p);
 }
 
-// function createSternzeichenInfo() {
-//   const bottom = document.createElement("bottom");
-//   container.appendChild(bottom);
-//   //Widder
-//   //Symbol
-//   let symbol = new Image();
-//   symbol.src = "";
-//   bottom.appendChild(symbol);
-//   //Überschrift
-//   const header1 = document.createElement("h1");
-//   header1.textContent = widder.name;
-//   bottom.appendChild(header1);
-//   console.log(header1);
-//   //Element
-//   const header2 = document.createElement("h2");
-//   header2.textContent = widder.element;
-//   bottom.appendChild(header2);
-//   //Beschreibung
-//   const header3 = document.createElement("h3");
-//   header3.textContent = "Beschreibung";
-//   bottom.appendChild(header3);
-//   const textDescription = document.createElement("p");
-//   textDescription.innerHTML = widder.description;
-//   bottom.appendChild(textDescription);
-//   //Love
-//   const header4 = document.createElement("h3");
-//   header4.textContent = "Liebe";
-//   bottom.appendChild(header4);
-//   const textLove = document.createElement("p");
-//   textLove.textContent = widder.love[0].hearts;
-//   textLove.textContent += widder.love[0].strong;
-//   bottom.appendChild(textLove);
-//   console.log(widder.love);
-//   //Gem
-//   const header5 = document.createElement("h3");
-//   header5.textContent = "Stein";
-//   bottom.appendChild(header5);
-//   const textStein = document.createElement("p");
-//   textStein.textContent = widder.gem;
-//   bottom.appendChild(textStein);
-//   //Color
-//   const header6 = document.createElement("h3");
-//   header6.textContent = "Farbe";
-//   bottom.appendChild(header6);
-//   const textFarbe = document.createElement("p");
-//   textFarbe.textContent = widder.color;
-//   bottom.appendChild(textFarbe);
-
-//   //Stier
-//   //Symbol
-//   //const symbolStier = new Image();
-//   symbol.src = "";
-//   bottom.appendChild(symbol);
-//   //Überschrift
-//   const header1S = document.createElement("h1");
-//   header1S.textContent = stier.name;
-//   bottom.appendChild(header1S);
-//   console.log(header1S);
-//   //Element
-//   //const header2 = document.createElement("h2");
-//   header2.textContent = stier.element;
-//   bottom.appendChild(header2);
-//   //Beschreibung
-//   //const header3 = document.createElement("h3");
-//   header3.textContent = "Beschreibung";
-//   bottom.appendChild(header3);
-//   //const textDescription = document.createElement("p");
-//   textDescription.innerHTML = stier.description;
-//   bottom.appendChild(textDescription);
-//   //Love
-//   //const header4 = document.createElement("h3");
-//   header4.textContent = "Liebe";
-//   bottom.appendChild(header4);
-//   //const textLove = document.createElement("p");
-//   textLove.textContent = stier.love;
-//   bottom.appendChild(textLove);
-//   //Gem
-//   //const header5 = document.createElement("h3");
-//   header5.textContent = "Stein";
-//   bottom.appendChild(header5);
-//   //const textStein = document.createElement("p");
-//   textStein.textContent = stier.gem;
-//   bottom.appendChild(textStein);
-//   //Color
-//   //const header6 = document.createElement("h3");
-//   header6.textContent = "Farbe";
-//   bottom.appendChild(header6);
-//   //const textFarbe = document.createElement("p");
-//   textFarbe.textContent = stier.color;
-//   bottom.appendChild(textFarbe);
-// }
 function createSternzeichenInfo() {
-  const bottom = document.createElement("bottom");
+  const bottom = document.createElement("footer");
   container.appendChild(bottom);
   sternzeichen.forEach((zeichen) => {
-    let symbol = new Image();
-    symbol.src = "";
-    bottom.appendChild(symbol);
+    bottom.appendChild(zeichen.symbol);
     //Überschrift
     const header1 = document.createElement("h1");
     header1.textContent = zeichen.name;
@@ -242,10 +151,14 @@ function createSternzeichenInfo() {
     let loveArray = zeichen.love;
     loveArray.forEach((liebe) => {
       const textLove = document.createElement("p");
-      textLove.textContent = liebe.name;
-      textLove.textContent += liebe.hearts;
-      textLove.textContent += liebe.strong;
+      textLove.textContent = liebe.name + ": ";
       bottom.appendChild(textLove);
+      const textLove2 = document.createElement("p");
+      textLove2.textContent += liebe.hearts;
+      bottom.appendChild(textLove2);
+      const textLove3 = document.createElement("p");
+      textLove3.textContent += liebe.strong;
+      bottom.appendChild(textLove3);
     });
     //Gem
     const header5 = document.createElement("h3");
@@ -263,6 +176,6 @@ function createSternzeichenInfo() {
     bottom.appendChild(textFarbe);
   });
 }
-createHauptseite();
-createGeschichte();
-createSternzeichenInfo();
+createHauptseite("", "Zwillinge", "♥️♥️♥️♥️", "");
+createGeschichte("", "Zwillinge", "♥️♥️♥️♥️", "");
+createSternzeichenInfo("", "Zwillinge", "♥️♥️♥️♥️", "");

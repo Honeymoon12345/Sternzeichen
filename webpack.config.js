@@ -1,3 +1,4 @@
+const { type } = require("os");
 const path = require("path");
 
 module.exports = {
@@ -13,6 +14,10 @@ module.exports = {
       {
         test: /\.s[ac]ss$/i,
         use: ["style-loader", "css-loader", "sass-loader"],
+      },
+      {
+        test: /\.(png|jpg|svg|jpeg|gif)$/i,
+        type: "asset/resource",
       },
     ],
   },

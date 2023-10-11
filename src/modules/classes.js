@@ -1,5 +1,6 @@
 export class Sternzeichen {
   constructor(name, element, description, love, gem, color) {
+    this.symbol = new Image();
     this.name = name;
     this.element = element;
     this.description = description;
@@ -37,8 +38,9 @@ export class Descriptions {
 }
 
 export class Love {
-  constructor(name, hearts, strong) {
+  constructor(name, name2, hearts, strong) {
     this.name = name;
+    this.name2 = name2;
     this.hearts = hearts;
     this.strong = strong;
   }
