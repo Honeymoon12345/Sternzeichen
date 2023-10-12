@@ -2,6 +2,8 @@ import { sternzeichen } from "./tiere";
 import { geschichte } from "./geschichte";
 import { loveWidder } from "./loveCombinations";
 import { Sternzeichen } from "./classes";
+import WidderB from "../img/widderB.png";
+import { container } from "webpack";
 
 export function createHauptseite() {
   const container = document.getElementById("container");
@@ -13,8 +15,11 @@ export function createHauptseite() {
   header.appendChild(element);
   //Buttons zu den Infos
   const btnWidder = document.createElement("button");
-  btnWidder.textContent = "Widder";
+  //btnWidder.textContent = "Widder";
   btnWidder.id = "1";
+  const imgWidderB = new Image();
+  imgWidderB.src = WidderB;
+  btnWidder.innerHTML = "<img src='" + WidderB + "' />";
   btnWidder.addEventListener("click", () => {
     console.log("Widder");
   });
@@ -107,20 +112,23 @@ export function createHauptseite() {
   header.appendChild(btnFische);
 }
 
-function createGeschichte() {
-  const middle = document.createElement("div");
-  middle.classList.add("middle");
-  container.appendChild(middle);
-  const element = document.createElement("h1");
-  element.textContent = "Geschichte";
-  middle.appendChild(element);
-  const div = document.createElement("div");
-  div.id = "geschichte";
-  middle.appendChild(div);
-  const p = document.createElement("p");
-  p.innerHTML = geschichte.history;
-  div.appendChild(p);
-}
+// function createGeschichte() {
+//   const main = document.createElement("main");
+//   //main.classList.add("main");
+//   container.appendChild(main);
+//   const geschichte = document.createElement("div");
+//   geschichte.classList.add("geschichte");
+//   main.appendChild(geschichte);
+//   const heading = document.createElement("h1");
+//   heading.textContent = "Geschichte";
+//   geschichte.appendChild(heading);
+//   // const div = document.createElement("div");
+//   // div.id = "geschichte";
+//   // geschichte.appendChild(div);
+//   const text = document.createElement("p");
+//   text.innerHTML = geschichte.history;
+//   geschichte.appendChild(text);
+// }
 
 function createSternzeichenInfo() {
   const bottom = document.createElement("footer");
@@ -176,6 +184,6 @@ function createSternzeichenInfo() {
     bottom.appendChild(textFarbe);
   });
 }
-createHauptseite("", "Zwillinge", "♥️♥️♥️♥️", "");
-createGeschichte("", "Zwillinge", "♥️♥️♥️♥️", "");
-createSternzeichenInfo("", "Zwillinge", "♥️♥️♥️♥️", "");
+createHauptseite();
+// createGeschichte();
+// createSternzeichenInfo();
