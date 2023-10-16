@@ -1,12 +1,13 @@
 import { History } from "./classes";
 
-export const geschichte = new History(
+export const anfang = new History(
   "Bis in das 17. Jahrhundert galten Horoskope als wissenschaftliche Arbeiten, da diese sehr \
   umfangreich berechnet wurden. Seit dem alten Rom ist jedoch die Glaubwürdigkeit der Horoskope \
   stark zurückgegangen. Heutzutage wird es größtenteils als Aberglaube angesehen, das Tageshoroskop \
   wird dennoch regelmäßig gelesen." +
     "<br>" +
-    "<b>Die Schreiber von Mesopotamien</b>" +
+    "<br>" +
+    "<b><span>Die Schreiber von Mesopotamien</span></b>" +
     "<br>" +
     "Die Geschichte beginnt in Mesopotamien, dem Zweistromland, im Jahr 1250 v. Chr. – einer Region, \
   die sich aufgrund ihrer Lage durch besonders berechenbare Wetterlagen auszeichnet. Es gibt eine \

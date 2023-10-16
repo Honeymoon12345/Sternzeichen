@@ -1,6 +1,7 @@
 export class Sternzeichen {
   constructor(name, element, description, love, gem, color) {
     this.symbol = new Image();
+    this.gif = new Image();
     this.name = name;
     this.element = element;
     this.description = description;
